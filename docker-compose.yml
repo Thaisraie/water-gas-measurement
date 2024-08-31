@@ -8,12 +8,12 @@ services:
       - /usr/src/app/node_modules
     ports:
       - "3000:3000"
-    env_file:
-      GEMINI_API_KEY: AIzaSyDpr3GFyD6ymHu3A7twES7SCHQoY8KpEA0
+    environment:
+      GEMINI_API_KEY:
       DATABASE: WATERGASMEASUREMENT
       USER: postgres
       PASSWORD: postgres
-      HOST: localhost
+      HOST: db
       PORT: 5432
     command: >
       sh -c "npm install && npm run build && npm run start"
