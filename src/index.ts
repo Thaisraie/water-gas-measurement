@@ -199,8 +199,7 @@ app.get("/images/:id", async (req, res) => {
 
       res.setHeader("Content-Type", "image/jpeg");
       res
-        .status(200)
-        .json(imageBuffer);
+        .status(200).send(imageBuffer)
     } else {
       return res.status(404).json({
         error_code: "MEASURES_NOT_FOUND",
